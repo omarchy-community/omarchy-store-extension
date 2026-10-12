@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Omarchy Store",
+  "short_name": "Omarchy Store",
+  "version": "1.0.0",
+  "description": "The world's largest app store for Omarchy, in your browser's side panel. Browse Linux apps and copy install commands.",
+  "author": "Omarchy Development Labs",
+  "homepage_url": "https://omarchystore.com",
+  "icons": {
+    "16": "assets/icons/16.png",
+    "32": "assets/icons/32.png",
+    "48": "assets/icons/48.png",
+    "128": "assets/icons/128.png"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Omarchy Store",
+    "default_icon": {
+      "16": "assets/icons/16.png",
+      "32": "assets/icons/32.png",
+      "48": "assets/icons/48.png",
+      "128": "assets/icons/128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "src/sidebar/sidebar.html"
+  },
+  "background": {
+    "service_worker": "src/background/background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://omarchystore.com/*",
+    "https://raw.githubusercontent.com/*"
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+O",
+        "mac": "Command+Shift+O"
+      },
+      "description": "Open Omarchy Store"
+    }
+  },
+  "minimum_chrome_version": "116"
+}

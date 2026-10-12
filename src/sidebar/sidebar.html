@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omarchy Store</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <div class="sidebar-app" id="app">
+    <!-- Header -->
+    <header class="sidebar-header">
+      <div class="header-left">
+        <div class="logo"><img src="../../assets/icons/48.png" alt=""></div>
+        <h1 class="title">Omarchy Store</h1>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="refresh-btn" title="Refresh catalog" aria-label="Refresh catalog">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 4v6h-6"></path>
+            <path d="M1 20v-6h6"></path>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" id="open-web-btn" title="Open full store website" aria-label="Open full store website">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Search -->
+    <div class="search-section">
+      <input type="search" id="search-input" placeholder="Search apps" aria-label="Search store" spellcheck="false" autocomplete="off">
+    </div>
+
+    <!-- Categories -->
+    <nav class="categories" id="categories" role="navigation" aria-label="Categories">
+      <button class="cat-btn active" data-category="all">All</button>
+    </nav>
+
+    <!-- Content -->
+    <main class="content" id="content" role="feed" aria-label="Store apps">
+      <div class="loading" id="loading">Loading store...</div>
+      <div class="grid" id="grid" style="display:none;"></div>
+      <div class="empty" id="empty" style="display:none;">No apps found</div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="sidebar-footer">
+      <a href="#" class="footer-link" id="footer-link">View full store at omarchystore.com</a>
+      <div class="footer-hint">Right-click any text to search the store</div>
+    </footer>
+
+    <!-- App Detail Modal -->
+    <dialog class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </dialog>
+  </div>
+
+  <script type="module" src="sidebar.js"></script>
+</body>
+</html>
